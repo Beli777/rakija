@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="fonts/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="css/slick.css"/>
 <link rel="stylesheet" href="css/style.css">
 <title>Markova Rakija</title>
@@ -11,17 +12,17 @@
 <body>
   <nav class="navigation">
     <div>
-      <a>Pocetna</a>
-      <a>Proizvodi</a>
-      <a>O nama</a>
+      <a href="index.html">Početna</a>
+      <a href="kruska.html">Proizvodi</a>
+      <a href="about-us.html">O nama</a>
     </div>
     <div>
-      <img src="img/logo.png"/>
+      <a href="index.html"><img src="img/logo.png"/></a>
     </div>
     <div>
-      <a>Kontakt</a>
+      <a href="contact.html">Kontakt</a>
       <a>Prijavi se na newsletter</a>
-      <a><img src="img/cart.png"/> Moja korpa</a>
+      <a id="myBtn"><img src="img/cart.png"/> Moja korpa</a>
     </div>
   </nav>
 
@@ -37,19 +38,19 @@
       </div>
     </div>
 
-    <div id="products" class="products">
+    <div id="products" class="scroll products">
       <div class="products__item">
         <div class="products__item-image">
           <img src="img/kruska.jpg"/>
         </div>
         <div class="products__item-holder">
-          <h4>Viljamovka</h4>
+          <h4>Kruška</h4>
           <p>
             Proizvodi se od fermentisanog kljuka kruške sorte Williams. Ova sorta kruške je ubedljivo najmirišljavija od svih sorti koje se gaje u svetu.
             <br><br>
             Ne postoji bolja kruška za destilaciju. Rakija je bezbojna, bistra sa izraženim aromatskim kompleksom kakav je i u samoj sirovini.
           </p>
-          <a href="#">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
+          <a href="kruska.html">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
         </div>
         <div class="products__item-buy">
           <div class="products__item-buy-text">dodaj ovaj proizvod u korpu</div>
@@ -70,7 +71,7 @@
           <br><br>
           Proces sazrevanja destilata šljive obavlja se u hrastovim buradima zapremine 500l Miris, ukus i boja pića potiče isključivo od kombinacije sljive i hrasta kitnjaka.
           </p>
-          <a href="#">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
+          <a href="sljiva.html">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
         </div>
         <div class="products__item-buy">
           <div class="products__item-buy-text">dodaj ovaj proizvod u korpu</div>
@@ -90,7 +91,7 @@
           Jabuku pravimo od fermentisanog jabukovog vina. Plodovi jabuke posle pranja selekcije i seckanja idu u presu i tako se dobija bistri sok od jabuke koji dalje ide u sudove z afermentaciju. Na ovaj način se i
           dobija finije piće na ukusu. Za proizvodnju koristimo više različitih sorti jabuke i kupžom dobijamo gotov proizvod. Destilat jabuke sazreva u hrastovim buradima zapremine 225 l tako da hrast učestvuje u kreiranju boje, mirsa i ukusa ovog pića.
           </p>
-          <a href="#">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
+          <a href="jabuka.html">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
         </div>
         <div class="products__item-buy">
           <div class="products__item-buy-text">dodaj ovaj proizvod u korpu</div>
@@ -109,7 +110,7 @@
           <p>
           Markova dunja je rakija dobijena destilaciom vina od dunje. Za proizvodnju ove rakije koristimo dunju sorte Leskovačka. Ova sorta ima najbogatiji aromatski kompleks I vodeća je sorta u zasadima u Srbiji. Destilat sazreva u inox sudovima pa je rakija zbog toga bezbojna i sve organoleptičke osobine potiču isključivo od sirovinine, odnosno voća.
           </p>
-          <a href="#">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
+          <a href="dunja.html">saznaj Više o proizvodu <img src="img/arrow.png"/></a>
         </div>
         <div class="products__item-buy">
           <div class="products__item-buy-text">dodaj ovaj proizvod u korpu</div>
@@ -120,8 +121,78 @@
       </div>
     </div>
 
-    <div class="newsletter">
+    <div id="myBtnSecond" class="newsletter">
       budite u toku i prijavite se na newsletter
+    </div>
+    <!-- The Modal -->
+    <div id="myModalSecond" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="closeSecond">&times;</span>
+        <h2>Prijavi se</h2>
+        <form>
+        <div class="modal-content-table">
+        <input type="email" placeholder="Email"/>
+        <div class="order__button"><button type="submit">Prijavi se</button></div>
+        </form>
+      </div>
+    </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Vaša korpa</h2>
+        <form name="cart">
+        <div class="modal-content-table">
+          <div>
+            <input placeholder="Ime i prezime"/>
+            <input placeholder="Adresa"/>
+            <input type="email" placeholder="Email"/>
+            <input placeholder="Broj Telefona"/>
+            <input placeholder="Ime Firme / PIB"/>
+          </div>
+
+          <div>
+            <div name="cart">
+              <div name="line_items" class="line_items">
+                <div><span class="line_items-box">Dunja</span></div>
+                <div class="relative"><input type="text" name="price" value="2350" disabled><span>din</span></div>
+                <div><input oninput="this.value = Math.abs(this.value)" min="0" type="number" class="special-number" type="text" name="qty" value="0"></div>
+                <div class="hidden"><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></div>
+              </div>
+              <div name="line_items" class="line_items">
+                <div><span class="line_items-box">Šljiva</span></div>
+                <div class="relative"><input type="text" name="price" value="2150" disabled><span>din</span></div>
+                <div><input oninput="this.value = Math.abs(this.value)" min="0" type="number" class="special-number" type="text" name="qty" value="0"></div>
+                <div class="hidden"><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></div>
+              </div>
+              <div name="line_items" class="line_items">
+                <div><span class="line_items-box">Kruška</span></div>
+                <div class="relative"><input type="text" name="price" value="2200" disabled><span>din</span></div>
+                <div><input oninput="this.value = Math.abs(this.value)" min="0" type="number" class="special-number" type="text" name="qty" value="0"></div>
+                <div class="hidden"><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></div>
+              </div>
+              <div name="line_items" class="line_items">
+                <div><span class="line_items-box">Jabuka</span></div>
+                <div class="relative"><input type="text" name="price" value="2150" disabled><span>din</span></div>
+                <div><input oninput="this.value = Math.abs(this.value)" min="0" type="number" class="special-number" type="text" name="qty" value="0"></div>
+                <div class="hidden"><input type="text" name="item_total" value="" jAutoCalc="{qty} * {price}"></div>
+              </div>
+              <div class="total-sum">
+                <div><span class="line_items-box">Ukupna cena</span></div>
+                <div class="relative"><input type="text" name="sub_total" value="" jAutoCalc="SUM({item_total})"><span>din</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order__button"><button type="submit">poruči</button></div>
+        </form>
+      </div>
+
     </div>
 
     <div class="footer">
@@ -140,6 +211,10 @@
       </div>
       <div class="footer__right">
         <span>Društvene mreže - pratite nas na</span>
+        <div class="social-icons">
+          <a href="http://www.facebook.com/markovarakija" target="_blank" class="social-icons-facebook"></a>
+          <a href="https://www.instagram.com/markovarakija" target="_blank" class="social-icons-instagram"></a>
+        </div>
       </div>
     </div>
     <div class="footer__bottom">
@@ -149,7 +224,17 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/calculator.js"></script>
 <script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript">
+<!--
+	$(document).ready(function() {
+		$('form[name=cart] div[name=line_items]').jAutoCalc({keyEventsFire: true, decimalPlaces: 2});
+		$('form[name=cart]').jAutoCalc({decimalPlaces: 2});
+
+	});
+//-->
+</script>
 <script src="js/main.js">
 </script>
 </html>
